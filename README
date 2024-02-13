@@ -2,10 +2,10 @@
 
 You can install the development version of SEMdetectR from [GitHub](https://github.com/) with:
 
-```r
+`r
 # install.packages("devtools")
-devtools::install_github("yaromar/SEMdetectR")
-```
+devtools::install_github("yaromar/SEMdetectR")`
+
 
 
 ```markdown
