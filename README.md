@@ -15,7 +15,7 @@ Here is a basic example of how to use SEMdetectR to detect Stochastic Epigenetic
 ```r
 library(SEMdetectR)
 
-Assuming `DNA_methylation_betas` is your input dataframe with rows = samples and columns = probes
+#Assuming `DNA_methylation_betas` is your input dataframe with rows = samples and columns = probes
 results <- detectSEM(DNA_methylation_betas, num_cores=4, cluster=TRUE, rf=FALSE)
 ```
 
