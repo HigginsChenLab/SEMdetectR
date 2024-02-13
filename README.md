@@ -1,10 +1,11 @@
-# Installation
+## Installation
 
 You can install the development version of SEMdetectR from [this folder](https://github.com/yaromar/SEMdetectR) with:
 
 ``` r
 install.packages("devtools")
-devtools::install_github("yaromar/SEMdetectR")```
+devtools::install_github("yaromar/SEMdetectR")
+```
 
 
 ## Usage
@@ -15,7 +16,8 @@ Here is a basic example of how to use SEMdetectR to detect Stochastic Epigenetic
 library(SEMdetectR)
 
 Assuming `DNA_methylation_betas` is your input dataframe with rows = samples and columns = probes
-results <- detectSEM(DNA_methylation_betas, num_cores=4, cluster=TRUE, rf=FALSE)```
+results <- detectSEM(DNA_methylation_betas, num_cores=4, cluster=TRUE, rf=FALSE)
+```
 
 ## Contributing
 
@@ -51,7 +53,8 @@ A BibTeX entry for LaTeX users is:
   year={2023},
   publisher={},
   doi={10.1101/2023.12.12.571149}
-}```
+}
+```
 
 Additionally, please cite Gentilini et al. (2015) if using the original IQR-based method and Houseman et al. (2012) if using the RF-based method (it uses cell count estimation described in the publication):
 
@@ -68,7 +71,8 @@ Additionally, please cite Gentilini et al. (2015) if using the original IQR-base
   year={2015},
   publisher={},
   doi={10.18632/aging.100792}
-}```
+}
+```
 
 > Houseman, E.A., Accomando, W.P., Koestler, D.C. et al. (2012). DNA methylation arrays as surrogate measures of cell mixture distribution. BMC Bioinformatics. 13, 86. 10.1186/1471-2105-13-8
 
@@ -82,4 +86,5 @@ Additionally, please cite Gentilini et al. (2015) if using the original IQR-base
   pages={},
   year={2012},
   publisher={},
-  doi={10.1186/1471-2105-13-8}```
+  doi={10.1186/1471-2105-13-8}
+```
