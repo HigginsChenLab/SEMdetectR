@@ -1,0 +1,25 @@
+Package: SEMdetectR
+Title: Detects Stochastic Epigenetic Mutations in DNA methylation data (beta values) with the original IQR- (Gentilini et al, 2015) and alternative random forest- (Markov et al, 2023) based algorithms
+Version: 0.0.0.9000
+Authors@R: 
+    person("Yaroslav", "Markov", , "yaroslav.markov@yale.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8778-4909"))
+Description: To meet the need for robust tools in Stochastic Epigenetic Mutations analysis, we have developed a new R package: SEMdetectR. Engineered to utilize parallel programming, this tool facilitates expedited SEM detection using either IQR- or RF-based techniques, bolstered by a spectrum of filtering and analytical capabilities. SEMdetectR has the flexibility to detect SEM in all probes or any subset of probes specified by user, employ reference methylation data derived from our whole-blood dataset investigations, or cluster their reference DNAme data based on methylation status. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Imports:
+    parallel (>= 4.3.2),
+    randomForest (>= 4.7-1.1),
+    dplyr (>= 1.1.4),
+    plyr (>= 1.8.9),
+    stringr (>= 1.5.1),
+    quadprog (>= 1.5-8),
+    moments (>= 0.14.1),
+    stats (>= 4.3.2),
+    graphics (>= 4.3.2)
+Depends: 
+    R (>= 4.3)
+LazyData: true
+LazyDataCompression: xz

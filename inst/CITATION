@@ -1,0 +1,35 @@
+citHeader("To cite SEMdetectR, please use:")
+citEntry(entry="Article",
+         title="Stochastic Epigenetic Mutations: Reliable Detection and Associations with Cardiovascular Aging",
+         author="Markov et al.",
+         journal="bioRxiv",
+         year="2023",
+         volume="",
+         number="",
+         pages="",
+         textVersion="Markov, Y., Levine, M., & Higgins-Chen, A. T. (2023). Stochastic Epigenetic Mutations: Reliable Detection and Associations with Cardiovascular Aging. bioRxiv. 10.1101/2023.12.12.571149",
+         doi="10.1101/2023.12.12.571149")
+
+citHeader("To cite the original IQR-based method implemented in this package, please use:")
+citEntry(entry="Article",
+         title="Stochastic epigenetic mutations (DNA methylation) increase exponentially in human aging and correlate with X chromosome inactivation skewing in females",
+         author="Gentilini et al.",
+         journal="Aging (Albany NY)",
+         year="2015",
+         volume="7",
+         number="8",
+         pages="568—578",
+         textVersion="Gentilini, D., Garagnani, P., Pisoni, S., et al. (2015). Stochastic epigenetic mutations (DNA methylation) increase exponentially in human aging and correlate with X chromosome inactivation skewing in females. Aging (Albany NY). 7, 8, 568-78. 10.18632/aging.100792",
+         doi="10.18632/aging.100792")
+
+citHeader("To cite the blood cell estimation methodology used by RF models, please use:")
+citEntry(entry="Article",
+         title="DNA methylation arrays as surrogate measures of cell mixture distribution",
+         author="Houseman et al.",
+         journal="BMC Bioinformatics",
+         year="2012",
+         volume="13",
+         number="86",
+         pages="",
+         textVersion="Houseman, E.A., Accomando, W.P., Koestler, D.C. et al. (2012). DNA methylation arrays as surrogate measures of cell mixture distribution. BMC Bioinformatics. 13, 86. 10.1186/1471-2105-13-86",
+         doi="10.1186/1471-2105-13-86")
