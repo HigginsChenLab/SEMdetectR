@@ -4,7 +4,7 @@ You can install the development version of SEMdetectR from [this folder](https:/
 
 ``` r
 install.packages("devtools")
-devtools::install_github("yaromar/SEMdetectR")
+devtools::install_github("HigginsChenLab/SEMdetectR")
 ```
 
 
