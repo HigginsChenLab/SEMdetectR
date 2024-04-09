@@ -1,4 +1,9 @@
 ## Installation
+TO-DO
+1) remove probes that have stats calculated as NAs if using clustering (it fails otherwise)
+2) perform mean imputation on DNAme and remove probes w/ non-random NAs
+
+## Installation
 
 You can install the development version of SEMdetectR from [this folder](https://github.com/yaromar/SEMdetectR) with:
 
