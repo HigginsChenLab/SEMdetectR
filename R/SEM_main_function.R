@@ -205,11 +205,11 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
       } else {
         # if user requested clustering with RF
         indices_unmethylated <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                          names(probe_clusters$cluster == 1))
+                                          names(probe_clusters$cluster[probe_clusters$cluster == 1]))
         indices_intermediate <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                          names(probe_clusters$cluster == 2))
+                                          names(probe_clusters$cluster[probe_clusters$cluster == 2]))
         indices_methylated <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                        names(probe_clusters$cluster == 3))
+                                        names(probe_clusters$cluster[probe_clusters$cluster == 3]))
 
         cat("Detecting SEMs in unmethylated probes with RF models...\n")
         results_unmethylated <- parallel::parLapply(cl, indices_unmethylated, function(index) {
@@ -291,11 +291,11 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
       } else {
         #clusters
         indices_unmethylated <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                          names(probe_clusters$cluster == 1))
+                                          names(probe_clusters$cluster[probe_clusters$cluster == 1]))
         indices_intermediate <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                          names(probe_clusters$cluster == 2))
+                                          names(probe_clusters$cluster[probe_clusters$cluster == 2]))
         indices_methylated <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                        names(probe_clusters$cluster == 3))
+                                        names(probe_clusters$cluster[probe_clusters$cluster == 3]))
 
         cat("Detecting SEMs in unmethylated probes with the original method...\n")
         results_unmethylated <- parallel::parLapply(cl, indices_unmethylated, function(index) {
@@ -364,11 +364,11 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
 
       } else {
         indices_unmethylated <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                          names(probe_clusters$cluster == 1))
+                                          names(probe_clusters$cluster[probe_clusters$cluster == 1]))
         indices_intermediate <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                          names(probe_clusters$cluster == 2))
+                                          names(probe_clusters$cluster[probe_clusters$cluster == 2]))
         indices_methylated <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                        names(probe_clusters$cluster == 3))
+                                        names(probe_clusters$cluster[probe_clusters$cluster == 3]))
 
         cat("Detecting SEMs in unmethylated probes with the RF models...\n")
         SEM_results_unmethylated <- CountSEM_rf(betas[, indices_unmethylated, drop = FALSE],
@@ -414,11 +414,11 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
 
       } else {
         indices_unmethylated <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                          names(probe_clusters$cluster == 1))
+                                          names(probe_clusters$cluster[probe_clusters$cluster == 1]))
         indices_intermediate <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                          names(probe_clusters$cluster == 2))
+                                          names(probe_clusters$cluster[probe_clusters$cluster == 2]))
         indices_methylated <- intersect(names(probe_clusters$cluster)[names(probe_clusters$cluster) %in% probes],
-                                        names(probe_clusters$cluster == 3))
+                                        names(probe_clusters$cluster[probe_clusters$cluster == 3]))
 
         cat("Detecting SEMs in unmethylated probes with the original method...\n")
         SEM_results_unmethylated <- CountSEM(betas[, indices_unmethylated, drop = FALSE])
