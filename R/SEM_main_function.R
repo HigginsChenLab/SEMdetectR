@@ -252,7 +252,7 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
 
         results_DF <- data.frame(unmethylated_probes=SEM_results_unmethylated,
                                  intermediate_probes=SEM_results_intermediate,
-                                 methylated_probes=SEM_results_intermediate)
+                                 methylated_probes=SEM_results_methylated)
         results_DF$all_probes.hypoSEM <- results_DF$unmethylated_probes.hypoSEM + results_DF$intermediate_probes.hypoSEM + results_DF$methylated_probes.hypoSEM
         results_DF$all_probes.hyperSEM <- results_DF$unmethylated_probes.hyperSEM + results_DF$intermediate_probes.hyperSEM + results_DF$methylated_probes.hyperSEM
 
@@ -337,7 +337,7 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
 
         results_DF <- data.frame(unmethylated_probes=SEM_results_unmethylated,
                                  intermediate_probes=SEM_results_intermediate,
-                                 methylated_probes=SEM_results_intermediate)
+                                 methylated_probes=SEM_results_methylated)
         results_DF$all_probes.hypoSEM <- results_DF$unmethylated_probes.hypoSEM + results_DF$intermediate_probes.hypoSEM + results_DF$methylated_probes.hypoSEM
         results_DF$all_probes.hyperSEM <- results_DF$unmethylated_probes.hyperSEM + results_DF$intermediate_probes.hyperSEM + results_DF$methylated_probes.hyperSEM
 
@@ -394,7 +394,7 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
 
         results_DF <- data.frame(unmethylated_probes=SEM_results_unmethylated,
                                  intermediate_probes=SEM_results_intermediate,
-                                 methylated_probes=SEM_results_intermediate)
+                                 methylated_probes=SEM_results_methylated)
         results_DF$all_probes.hypoSEM <- results_DF$unmethylated_probes.hypoSEM + results_DF$intermediate_probes.hypoSEM + results_DF$methylated_probes.hypoSEM
         results_DF$all_probes.hyperSEM <- results_DF$unmethylated_probes.hyperSEM + results_DF$intermediate_probes.hyperSEM + results_DF$methylated_probes.hyperSEM
 
@@ -437,7 +437,7 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
 
         results_DF <- data.frame(unmethylated_probes=SEM_results_unmethylated,
                                  intermediate_probes=SEM_results_intermediate,
-                                 methylated_probes=SEM_results_intermediate)
+                                 methylated_probes=SEM_results_methylated)
         results_DF$all_probes.hypoSEM <- results_DF$unmethylated_probes.hypoSEM + results_DF$intermediate_probes.hypoSEM + results_DF$methylated_probes.hypoSEM
         results_DF$all_probes.hyperSEM <- results_DF$unmethylated_probes.hyperSEM + results_DF$intermediate_probes.hyperSEM + results_DF$methylated_probes.hyperSEM
 
