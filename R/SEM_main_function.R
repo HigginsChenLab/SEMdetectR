@@ -32,7 +32,7 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
     stop("Some elements in 'betas' are outside the range [0, 1]. Possibly NA values?\n")
   }
 
-  if(rf & nrow(betas) <= 2e+05) {
+  if(rf & ncol(betas) <= 2e+05) {
     warning("Houseman et al. suggest 'you use at least 2x10^5 probes' for cell count inference (required by the RF models)")
   }
 
