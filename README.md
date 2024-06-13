@@ -1,6 +1,6 @@
 ## TO-DO
 1) remove probes that have stats calculated as NAs if using clustering (it fails otherwise)
-2) perform mean imputation on DNAme and remove probes w/ non-random NAs
+2) perform imputation on DNAme and remove probes w/ non-random NAs
 3) add EPIC annotations
 
 ## Installation
