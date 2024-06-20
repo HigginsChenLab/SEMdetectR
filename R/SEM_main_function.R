@@ -147,7 +147,15 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
   if(rf) {
     #now we add probe annotations to the model_features dataframe
     cat("Creating probe annotations for the RF models...\n")
-    model_features <- AnnotateStats(probe_stats, probe_clusters)
+
+    tryCatch({
+      model_features <- AnnotateStats(probe_stats, probe_clusters, array=array)
+    }, error = function(e) {
+      cat("Error in AnnotateStats: ", e$message, "\n")
+      return()  # Exiting the main function due to the error
+  })
+    
+    
     betas <- betas[, colnames(betas) %in% probe_annotations$Name]
     if(!is.null(probes)){
       probes <- intersect(probes, probe_annotations$Name)
