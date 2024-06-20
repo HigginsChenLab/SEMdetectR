@@ -52,11 +52,11 @@ A BibTeX entry for LaTeX users is:
 @article{Markov2024,
   title={Reliable detection of stochastic epigenetic mutations and associations with cardiovascular aging},
   author={Markov, Y., Levine, M., & Higgins-Chen, A. T.},
-  journal={geroscience},
+  journal={GeroScience},
   volume={},
   number={},
   pages={},
-  year={2023},
+  year={2024},
   publisher={},
   doi={10.1007/s11357-024-01191-3}
 }
