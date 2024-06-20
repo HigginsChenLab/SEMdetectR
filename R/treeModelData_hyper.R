@@ -7,5 +7,5 @@
 #' @name treeModelData_hyper.rda
 #' @format An object of class `randomForest` as defined by the randomForest package.
 #' @source The model was trained on the GSE55763 dataset of whole blood technical replicates. SEMs were detected with the IQR-based method in both replicates and annotated with Illumina manifest and inferred cell counts (Houseman).
-#' @references Markov, Y., Levine, M., & Higgins-Chen, A. T. (2023). Stochastic Epigenetic Mutations: Reliable Detection and Associations with Cardiovascular Aging. bioRxiv. 10.1101/2023.12.12.571149
+#' @references Markov, Y., Levine, M., & Higgins-Chen, A. T. (2024). SReliable detection of stochastic epigenetic mutations and associations with cardiovascular aging. GeroScience. 10.1007/s11357-024-01191-3
 "treeModelData_hyper"
