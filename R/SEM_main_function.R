@@ -15,7 +15,8 @@ utils::globalVariables(c("probe_annotations", "probe_annotationsEPIC"))
 #' @param rf Logical (TRUE/FALSE) indicating whether to use the RF-based method. The default is FALSE (using the IQR-based method).
 #' @param probes An optional list of character elements containing the names of the probes in 'betas' that should be analyzed. Default is to analyze all probes present in 'betas'.
 #' @param cluster Logical (TRUE/FALSE) indicating whether to detect cluster probes into unmethylated, intermediate, and methylated probes based on their methylation status in 'betas' (later will incorporate a reference for blood) and group SEMs based on the type of probe they originate from. Clustering is required for RF-based models.
-#'
+#' @param array Character string, specifying the type of array. Must be one of "450k" or "EPIC".
+#' 
 #' @return A dataframe containing different types of SEM counts. Subjects are in organized in the same order as in \code{betas}.
 #' @export
 ################################################################################################
@@ -25,7 +26,9 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE, 
   if (!is.data.frame(betas)) {
     stop("'betas' must be a data frame with subjects as rows and CpGs as columns.")
   }
-
+  if(!(array %in% c("450k", "EPIC"))) {
+    stop("Invalid array type. Only '450k' and 'EPIC' are supported.")
+  }
   if(all(betas >= 0 & betas <= 1)) {
     cat("All DNA methylation values are within the range [0, 1].\n")
   } else {
