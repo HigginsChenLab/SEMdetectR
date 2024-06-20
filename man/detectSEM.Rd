@@ -16,6 +16,8 @@ detectSEM(betas, num_cores = 1, rf = FALSE, probes = NULL, cluster = FALSE)
 \item{probes}{An optional list of character elements containing the names of the probes in 'betas' that should be analyzed. Default is to analyze all probes present in 'betas'.}
 
 \item{cluster}{Logical (TRUE/FALSE) indicating whether to detect cluster probes into unmethylated, intermediate, and methylated probes based on their methylation status in 'betas' (later will incorporate a reference for blood) and group SEMs based on the type of probe they originate from. Clustering is required for RF-based models.}
+
+\item{array}{A string indicating the type of Illumina array; required for the RF method. The allowed options are "450k" or "EPIC".}
 }
 \value{
 A dataframe containing different types of SEM counts. Subjects are in organized in the same order as in \code{betas}.
