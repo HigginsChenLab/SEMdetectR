@@ -21,7 +21,8 @@ Here is a basic example of how to use SEMdetectR to detect Stochastic Epigenetic
 library(SEMdetectR)
 
 #Assuming `DNA_methylation_betas` is your input dataframe with rows = samples and columns = probes
-results <- detectSEM(DNA_methylation_betas, num_cores=4, cluster=TRUE, rf=FALSE, array="450k")
+results <- detectSEM(DNA_methylation_betas, num_cores=4, cluster=TRUE, rf=FALSE) # detects SEMs with the original IQR-based method, separately for unmethylated, intermediate, and methylated probes
+results_rf <- detectSEM(DNA_methylation_betas, num_cores=4, cluster=TRUE, rf=TRUE, array="450k") # detects SEMs with the RF-based method, separately for unmethylated, intermediate, and methylated probes found on Illumina 450k array. Even if the parameter "cluster" is set to FALSE, it will still need to cluster probes, because this information is used by the RF models.
 ```
 
 ## Contributing
@@ -43,7 +44,7 @@ For questions or support, please open an issue on the GitHub repository, or cont
 
 We kindly request that you cite the following paper if you use SEMdetectR in your research:
 
-> Markov, Y., Levine, M., & Higgins-Chen, A. T. (2023). Stochastic Epigenetic Mutations: Reliable Detection and Associations with Cardiovascular Aging. bioRxiv. 10.1101/2023.12.12.571149
+> Markov, Y., Levine, M., & Higgins-Chen, A. T. (2024). Reliable detection of stochastic epigenetic mutations and associations with cardiovascular aging. GeroScience. 10.1007/s11357-024-01191-3
 
 A BibTeX entry for LaTeX users is:
 
