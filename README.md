@@ -48,16 +48,16 @@ We kindly request that you cite the following paper if you use SEMdetectR in you
 A BibTeX entry for LaTeX users is:
 
 ```bibtex
-@article{Markov2023,
-  title={Stochastic Epigenetic Mutations: Reliable Detection and Associations with Cardiovascular Aging},
+@article{Markov2024,
+  title={Reliable detection of stochastic epigenetic mutations and associations with cardiovascular aging},
   author={Markov, Y., Levine, M., & Higgins-Chen, A. T.},
-  journal={bioRxiv},
+  journal={geroscience},
   volume={},
   number={},
   pages={},
   year={2023},
   publisher={},
-  doi={10.1101/2023.12.12.571149}
+  doi={10.1007/s11357-024-01191-3}
 }
 ```
 
