@@ -19,7 +19,7 @@ GetStats<- function(betas, num_cores=1) {
 
   if(num_cores > 1){
     stats <- data.frame(
-      mean = colMeans(betas)
+      mean = colMeans(betas, na.rm=TRUE)
     )
 
     # Set up parallel computing
@@ -29,13 +29,13 @@ GetStats<- function(betas, num_cores=1) {
 
     # Define a function to compute statistics for a single column
     computeStats <- function(col){
-      c(q1 = stats::quantile(col, probs = .25),
-        q3 = stats::quantile(col, probs = .75),
-        skewness = moments::skewness(col),
-        stdev = stats::sd(col),
-        min = min(col),
-        max = max(col),
-        kurtosis = moments::kurtosis(col))
+      c(q1 = stats::quantile(col, probs = .25, na.rm=TRUE),
+        q3 = stats::quantile(col, probs = .75, na.rm=TRUE),
+        skewness = moments::skewness(col, na.rm=TRUE),
+        stdev = stats::sd(col, na.rm=TRUE),
+        min = min(col, na.rm=TRUE),
+        max = max(col, na.rm=TRUE),
+        kurtosis = moments::kurtosis(col, na.rm=TRUE))
     }
 
     # Apply the computeStats function in parallel across columns
@@ -51,14 +51,15 @@ GetStats<- function(betas, num_cores=1) {
   }
   else{
     # Compute statistics without parallel processing
-    stats <- data.frame(mean=colMeans(betas),
-                        q1=apply(betas,2,stats::quantile,probs=.25),
-                        q3=apply(betas,2,stats::quantile,probs=.75),
-                        skewness=apply(betas, 2, moments::skewness),
-                        stdev=apply(betas,2,stats::sd),
-                        min=apply(betas,2,min),
-                        max=apply(betas, 2, max),
-                        kurtosis=apply(betas, 2,moments::kurtosis)
+    stats <- data.frame(
+      mean = colMeans(betas, na.rm = TRUE),
+      q1 = apply(betas, 2, function(x) quantile(x, probs = .25, na.rm = TRUE)),
+      q3 = apply(betas, 2, function(x) quantile(x, probs = .75, na.rm = TRUE)),
+      skewness = apply(betas, 2, moments::skewness, na.rm = TRUE),
+      stdev = apply(betas, 2, sd, na.rm = TRUE),
+      min = apply(betas, 2, min, na.rm = TRUE),
+      max = apply(betas, 2, max, na.rm = TRUE),
+      kurtosis = apply(betas, 2, moments::kurtosis, na.rm = TRUE)
     )
   }
 
