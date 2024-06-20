@@ -155,13 +155,13 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE, 
       return()  # Exiting the main function due to the error
   })
     
-    if(array="450k"){
+    if(array=="450k"){
       betas <- betas[, colnames(betas) %in% probe_annotations$Name]
       if(!is.null(probes)){
         probes <- intersect(probes, probe_annotations$Name)
       }
     }
-    else if(array="EPIC"){
+    else if(array=="EPIC"){
       betas <- betas[, colnames(betas) %in% probe_annotationsEPIC$Name]
       if(!is.null(probes)){
         probes <- intersect(probes, probe_annotationsEPIC$Name)
