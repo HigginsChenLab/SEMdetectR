@@ -98,13 +98,20 @@ GetClusters <- function(probe_stats){
 #' @importFrom dplyr mutate_at case_when if_else vars mutate %>%
 #' @importFrom stringr str_count
 #' @return A dataframe of annotated probe statistics including clustering information.
-AnnotateStats <- function(probe_stats, probe_clusters){
-  # Assuming probe_annotations is available in the package's data directory
+AnnotateStats <- function(probe_stats, probe_clusters, array="450k"){
+  # Assuming probe_annotations or probe_annotationsEPIC is available in the package's data directory
 
   # Merging probe statistics with global probe annotations
   # This adds additional details like Color, SourceSeq, etc.
-  probe_stats <- merge(probe_stats, probe_annotations, by="row.names", all.x=TRUE)
-
+  if(array == "450k"){
+    probe_stats <- merge(probe_stats, probe_annotations, by="row.names", all.x=TRUE)
+  }
+  else if(array == "EPIC"){
+    probe_stats <- merge(probe_stats, probe_annotationsEPIC, by="row.names", all.x=TRUE)
+  }
+  else{
+    stop("Unsupported array type provided")  # Stopping execution with an error message
+  }
   # Counting occurrences of "CG" in the SourceSeq to identify CpG sites
   probe_stats$nCpG <- stringr::str_count(probe_stats$SourceSeq, "CG")
 
