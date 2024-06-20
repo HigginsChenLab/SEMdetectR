@@ -1,4 +1,4 @@
-utils::globalVariables(c("probe_annotations", "treeModelData_hyper", "treeModelData_hypo"))
+utils::globalVariables(c("probe_annotations", "probe_annotationsEPIC", "treeModelData_hyper", "treeModelData_hypo"))
 #' Calculate Statistics for Each probe in a DNA methylation dataframe
 #'
 #' Computes mean, quartiles, skewness, standard deviation, minimum, maximum, and kurtosis.
