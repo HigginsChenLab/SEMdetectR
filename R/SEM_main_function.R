@@ -1,4 +1,4 @@
-utils::globalVariables(c("probe_annotations"))
+utils::globalVariables(c("probe_annotations", "probe_annotationsEPIC"))
 #' @title Detect SEMs in DNA Methylation Beta Values
 #' @details This function serves as the main entry point for detecting stochastic epigenetic mutations (SEMs)
 #' in DNA methylation data using either an IQR-based method or a more sophisticated Random Forest (RF)-based method.
@@ -19,7 +19,7 @@ utils::globalVariables(c("probe_annotations"))
 #' @return A dataframe containing different types of SEM counts. Subjects are in organized in the same order as in \code{betas}.
 #' @export
 ################################################################################################
-detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) {
+detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE, array="450k") {
   ################################################################################################
   # Check if 'betas' is a dataframe
   if (!is.data.frame(betas)) {
@@ -155,11 +155,24 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE) 
       return()  # Exiting the main function due to the error
   })
     
-    
-    betas <- betas[, colnames(betas) %in% probe_annotations$Name]
-    if(!is.null(probes)){
-      probes <- intersect(probes, probe_annotations$Name)
+    if(array="450k"){
+      betas <- betas[, colnames(betas) %in% probe_annotations$Name]
+      if(!is.null(probes)){
+        probes <- intersect(probes, probe_annotations$Name)
+      }
     }
+    else if(array="EPIC"){
+      betas <- betas[, colnames(betas) %in% probe_annotationsEPIC$Name]
+      if(!is.null(probes)){
+        probes <- intersect(probes, probe_annotationsEPIC$Name)
+      }
+    }
+    else{
+      cat("Invalid array type provided, exiting...\n")
+      return()  # Exiting the main function
+    }
+    
+
     cat("Estimating cell counts...\n")
     betas_transpose <- t(betas)
     cell_counts <- estimate.cell.proportions(betas_transpose)
