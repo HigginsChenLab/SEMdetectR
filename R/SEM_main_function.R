@@ -10,7 +10,7 @@ utils::globalVariables(c("probe_annotations", "probe_annotationsEPIC"))
 #' @importFrom parallel detectCores makeCluster clusterEvalQ clusterExport parLapply stopCluster
 #' @importFrom graphics hist
 #'
-#' @param betas DNA methylation dataframe with beta values. Rows are subjects, columns are probes. Columns must have probe names from the Illumina 450k array if using the RF-based detection method.
+#' @param betas DNA methylation dataframe with beta values. Rows are subjects, columns are probes. Columns must have probe names from the Illumina 450k or EPIC array if using the RF-based detection method.
 #' @param num_cores Number of cores to be used. Default is 1 (no parallel processing).
 #' @param rf Logical (TRUE/FALSE) indicating whether to use the RF-based method. The default is FALSE (using the IQR-based method).
 #' @param probes An optional list of character elements containing the names of the probes in 'betas' that should be analyzed. Default is to analyze all probes present in 'betas'.
@@ -19,7 +19,7 @@ utils::globalVariables(c("probe_annotations", "probe_annotationsEPIC"))
 #' @return A dataframe containing different types of SEM counts. Subjects are in organized in the same order as in \code{betas}.
 #' @export
 ################################################################################################
-detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE, array="450k") {
+detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE, array) {
   ################################################################################################
   # Check if 'betas' is a dataframe
   if (!is.data.frame(betas)) {
@@ -149,7 +149,7 @@ detectSEM <- function(betas, num_cores=1, rf=FALSE, probes=NULL, cluster=FALSE, 
     cat("Creating probe annotations for the RF models...\n")
 
     tryCatch({
-      model_features <- AnnotateStats(probe_stats, probe_clusters, array=array)
+      model_features <- AnnotateStats(probe_stats, probe_clusters, array)
     }, error = function(e) {
       cat("Error in AnnotateStats: ", e$message, "\n")
       return()  # Exiting the main function due to the error
