@@ -1,14 +1,14 @@
 citHeader("To cite SEMdetectR, please use:")
 citEntry(entry="Article",
-         title="Stochastic Epigenetic Mutations: Reliable Detection and Associations with Cardiovascular Aging",
+         title="Reliable detection of stochastic epigenetic mutations and associations with cardiovascular aging",
          author="Markov et al.",
-         journal="bioRxiv",
-         year="2023",
+         journal="GeroScience",
+         year="2024",
          volume="",
          number="",
          pages="",
-         textVersion="Markov, Y., Levine, M., & Higgins-Chen, A. T. (2023). Stochastic Epigenetic Mutations: Reliable Detection and Associations with Cardiovascular Aging. bioRxiv. 10.1101/2023.12.12.571149",
-         doi="10.1101/2023.12.12.571149")
+         textVersion="Markov, Y., Levine, M., & Higgins-Chen, A. T. (2024). eliable detection of stochastic epigenetic mutations and associations with cardiovascular aging. GeroScience. 10.1007/s11357-024-01191-3",
+         doi="10.1007/s11357-024-01191-3")
 
 citHeader("To cite the original IQR-based method implemented in this package, please use:")
 citEntry(entry="Article",
